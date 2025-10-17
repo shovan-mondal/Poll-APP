@@ -20,14 +20,17 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy from builder
+# Copy package.json first to set module type
 COPY --from=builder /app/package*.json ./
+
+# Install tsx globally in production container
+RUN npm install -g tsx
+
+# Copy from builder
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/server ./server
 COPY --from=builder /app/services ./services
 COPY --from=builder /app/types.ts ./
-COPY --from=builder /usr/local/lib/node_modules/tsx /usr/local/lib/node_modules/tsx
-COPY --from=builder /usr/local/bin/tsx /usr/local/bin/tsx
 
 # Expose port
 EXPOSE 8000
