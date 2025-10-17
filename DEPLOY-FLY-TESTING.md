@@ -14,9 +14,11 @@ fly apps create api-testing
 
 ### 3. Set Environment Variables
 ```bash
-fly secrets set MONGODB_URI="mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll" -a api-testing
+fly secrets set MONGODB_URI="<YOUR_MONGODB_CONNECTION_STRING>" -a api-testing
 fly secrets set NODE_ENV="production" -a api-testing
 ```
+
+**Note**: Replace `<YOUR_MONGODB_CONNECTION_STRING>` with your actual MongoDB Atlas connection string.
 
 ### 4. Deploy!
 ```bash

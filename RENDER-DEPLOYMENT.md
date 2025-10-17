@@ -33,8 +33,10 @@ This guide shows how to deploy both frontend and backend on a single Render web 
 **Environment Variables:**
 Add these in the "Environment" section:
 - `NODE_ENV` = `production`
-- `MONGODB_URI` = `mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll`
+- `MONGODB_URI` = `<YOUR_MONGODB_CONNECTION_STRING>`
 - `PORT` = `8000` (Render will override this automatically)
+
+**Note**: Replace `<YOUR_MONGODB_CONNECTION_STRING>` with your actual MongoDB Atlas connection string.
 
 ### Step 3: Deploy
 

@@ -18,13 +18,15 @@ npm install
 
 ### 2. Configure Environment Variables
 
-The `.env.local` file already contains your MongoDB connection string:
+Create a `.env.local` file in the root directory with your credentials:
 
 ```env
 GEMINI_API_KEY=your-gemini-api-key
-VITE_MONGODB_URI=mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll
+VITE_MONGODB_URI=<YOUR_MONGODB_CONNECTION_STRING>
 VITE_API_URL=http://localhost:3000
 ```
+
+**Note**: Replace `<YOUR_MONGODB_CONNECTION_STRING>` with your actual MongoDB Atlas connection string.
 
 ### 3. Run the Application
 

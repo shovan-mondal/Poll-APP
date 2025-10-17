@@ -36,9 +36,11 @@ When prompted:
 
 ### Step 4: Set Environment Variables
 ```bash
-fly secrets set MONGODB_URI="mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll"
+fly secrets set MONGODB_URI="<YOUR_MONGODB_CONNECTION_STRING>"
 fly secrets set NODE_ENV="production"
 ```
+
+**Note**: Replace `<YOUR_MONGODB_CONNECTION_STRING>` with your actual MongoDB Atlas connection string.
 
 ### Step 5: Deploy!
 ```bash

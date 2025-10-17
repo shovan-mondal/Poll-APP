@@ -38,8 +38,8 @@ Or manually:
 # 1. Launch (first time only)
 fly launch --no-deploy
 
-# 2. Set secrets
-fly secrets set MONGODB_URI="mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll"
+# 2. Set secrets (replace with your actual MongoDB connection string)
+fly secrets set MONGODB_URI="<YOUR_MONGODB_CONNECTION_STRING>"
 
 # 3. Deploy
 fly deploy

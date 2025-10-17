@@ -18,7 +18,11 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 // MongoDB connection with optimized settings for burst traffic
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll';
+const MONGODB_URI = process.env.MONGODB_URI;
+if (!MONGODB_URI) {
+  console.error('❌ MONGODB_URI environment variable is not set!');
+  process.exit(1);
+}
 let db: Db;
 
 // Connect to MongoDB with connection pooling optimized for 100+ concurrent users

@@ -16,7 +16,8 @@ fly launch --no-deploy
 
 # Set secrets
 Write-Host "🔐 Setting environment variables..." -ForegroundColor Yellow
-fly secrets set MONGODB_URI="mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll"
+Write-Host "⚠️  IMPORTANT: Edit this script and replace <YOUR_MONGODB_CONNECTION_STRING> with your actual MongoDB URI!" -ForegroundColor Red
+fly secrets set MONGODB_URI="<YOUR_MONGODB_CONNECTION_STRING>"
 fly secrets set NODE_ENV="production"
 
 # Deploy

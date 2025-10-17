@@ -53,8 +53,10 @@ Click "Advanced" → Add these:
 
 ```
 NODE_ENV = production
-MONGODB_URI = mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll
+MONGODB_URI = <YOUR_MONGODB_CONNECTION_STRING>
 ```
+
+**Note**: Replace `<YOUR_MONGODB_CONNECTION_STRING>` with your actual MongoDB Atlas connection string.
 
 ### 5. Deploy!
 
