@@ -1,7 +1,7 @@
 # Fly.io Backend Deployment
 
 # Fly.io app configuration
-app = "live-poll-api"
+app = "api-testing"
 primary_region = "sin" # Singapore - change to your nearest region
 
 [build]
@@ -18,4 +18,4 @@ primary_region = "sin" # Singapore - change to your nearest region
   processes = ["app"]
 
 [[vm]]
-  cpu_kind = "shared-cpu-4x"
+  cpu_kind = "shared"
