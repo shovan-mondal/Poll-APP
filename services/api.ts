@@ -1,6 +1,12 @@
 // Simple API client for polling service
-// Using relative path - Vite proxy will forward /api/* to backend
-const API_URL = '/api';
+// In development: uses Vite proxy (/api)
+// In production: uses environment variable (Fly.io URL)
+const getApiUrl = () => {
+  // @ts-ignore - Vite injects import.meta.env
+  const prodUrl = import.meta.env?.VITE_API_URL;
+  return prodUrl ? `${prodUrl}/api` : '/api';
+};
+const API_URL = getApiUrl();
 
 export const api = {
   async createPoll(options: any) {

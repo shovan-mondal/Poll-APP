@@ -31,7 +31,10 @@ async function connectToDatabase() {
 }
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*', // Allow frontend domain
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' })); // Increase limit for base64 images
 
 // Serve static files from the dist folder in production

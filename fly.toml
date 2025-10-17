@@ -1,0 +1,21 @@
+# Fly.io Backend Deployment
+
+# Fly.io app configuration
+app = "live-poll-api"
+primary_region = "sin" # Singapore - change to your nearest region
+
+[build]
+
+[env]
+  NODE_ENV = "production"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared-cpu-4x"
