@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: live-poll-app
+    env: node
+    buildCommand: npm install && npm run build && cd server && npm install
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 8000

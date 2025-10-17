@@ -1,0 +1,5 @@
+
+{
+  "name": "Live Poll Fun",
+  "description": "An interactive polling application where an admin can create a poll with images and a unique ID. Participants can join using the ID and vote. A hidden 'None' option adds a fun twist to the game. The app is designed for real-time interaction and is mobile-first."
+}
