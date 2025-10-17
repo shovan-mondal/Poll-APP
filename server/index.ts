@@ -17,20 +17,27 @@ if (process.env.NODE_ENV !== 'production') {
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-// MongoDB connection
+// MongoDB connection with optimized settings for burst traffic
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://emithru:emit_cmrit_2025@fsdproject.hojgqql.mongodb.net/Live-poll';
 let db: Db;
 
-// Connect to MongoDB
+// Connect to MongoDB with connection pooling optimized for 100+ concurrent users
 async function connectToDatabase() {
   try {
-    const client = new MongoClient(MONGODB_URI);
+    const client = new MongoClient(MONGODB_URI, {
+      maxPoolSize: 100, // Support up to 100 concurrent connections
+      minPoolSize: 10,  // Keep 10 connections ready
+      maxIdleTimeMS: 30000, // Close idle connections after 30s
+      serverSelectionTimeoutMS: 5000, // Timeout for server selection
+      socketTimeoutMS: 45000, // Socket timeout
+    });
     await client.connect();
     db = client.db('pollApp');
-    console.log('✅ Connected to MongoDB');
+    console.log('✅ Connected to MongoDB with optimized pool settings');
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
-    process.exit(1);
+    // Retry connection after 5 seconds
+    setTimeout(connectToDatabase, 5000);
   }
 }
 
